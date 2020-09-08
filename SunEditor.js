@@ -10,7 +10,7 @@ class SunEditor extends Component {
     this.txtArea = createRef();
   }
   componentDidMount() {
-    const { lang, setOptions = {}, width = "100%", height } = this.props;
+    const { lang, setOptions = {}, width = "100%", height, autoCompleteOptions } = this.props;
 
     setOptions.lang = setOptions.lang || getLanguage(lang);
     setOptions.plugins = setOptions.plugins || getPlugins(setOptions);
