@@ -16,6 +16,7 @@ class SunEditor extends Component {
     setOptions.plugins = setOptions.plugins || getPlugins(setOptions);
     setOptions.width = setOptions.width || width;
     if (height) setOptions.height = height;
+    if (autoCompleteOptions) setOptions.autoCompleteOptions = autoCompleteOptions;
 
     this.editor = suneditor.create(this.txtArea.current);
     const {
@@ -192,6 +193,9 @@ class SunEditor extends Component {
     }
     if (prevProps.width !== this.props.width) {
       this.editor.setOptions({ width: this.props.width });
+    }
+    if (prevProps.autoCompleteOptions !== this.props.autoCompleteOptions) {
+      this.editor.setOptions({ autoCompleteOptions: this.props.autoCompleteOptions })
     }
     if (prevProps.setDefaultStyle !== this.props.setDefaultStyle) {
       this.editor.setDefaultStyle(this.props.setDefaultStyle);
